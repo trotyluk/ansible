@@ -1,9 +1,5 @@
-[rh]
-# client1
-10.211.55.59
-# client2
-10.211.55.61
-# client3
-10.211.55.62
-# grupa
+[proxmox]
+# proxmox
+192.168.1.100
+
 
