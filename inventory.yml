@@ -29,4 +29,5 @@ proxnodes:
     proxmox:
       ansible_host: 192.168.1.100
       ansible_port: 998
+      ansible_user: root
 
