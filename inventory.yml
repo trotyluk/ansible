@@ -5,21 +5,16 @@ ansible:
     comp:
       ansible_host: 192.169.1.9
       ansible_port: 22
+      ansible_user: ansible
     astor:
       ansible_host: 192.168.1.7
       ansible_port: 999
       ansible_user: boss1
       ansible_python_interpreter: /usr/local/bin/python3
-    proxmox:
-      ansible_host: 192.168.1.100
-      ansible_port: 998
     router:
       ansible_host: 192.168.1.1
       ansible_port: 991
-    prox:
-      ansible_host: 192.168.1.9
-      ansible_port: 22
-      ansible_user: root
+      ansible_user: ansible
 proxnodes:
   hosts:
     prox:
@@ -28,6 +23,6 @@ proxnodes:
       ansible_user: root
     proxmox:
       ansible_host: 192.168.1.100
-      ansible_port: 998
+      ansible_port: 22
       ansible_user: root
 
