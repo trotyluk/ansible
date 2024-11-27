@@ -16,11 +16,11 @@ proxnodes:
     prox:
       ansible_host: 192.168.1.9
       ansible_port: 22
-      ansible_user: root
+      ansible_user: ansible
     proxmox:
       ansible_host: 192.168.1.100
       ansible_port: 22
-      ansible_user: root
+      ansible_user: ansible
 homelab:
   hosts:
     truenas:

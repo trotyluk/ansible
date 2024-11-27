@@ -1,0 +1,10 @@
+# playbook to upgrade proxmox 
+- hosts: proxnodes
+  become: true
+  tasks:
+
+  - name: update repository cache and upgrade
+    apt:
+      update_cache: true
+      cache_valid_time: 3600
+      upgrade: true

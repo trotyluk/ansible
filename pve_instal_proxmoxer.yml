@@ -1,0 +1,15 @@
+# install proxmoxer package on ansible
+- hosts: proxnodes
+  become: true
+  tasks:
+
+  - name: update repository cache
+    apt:
+      update_cache: true
+      cache_valid_time: 3600
+
+  - name: install proxmoxer
+    apt:
+      name:
+      - python3-proxmoxer
+      state: latest
