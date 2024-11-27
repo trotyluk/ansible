@@ -2,10 +2,6 @@
 
 ansible:
   hosts:
-    comp:
-      ansible_host: 192.169.1.9
-      ansible_port: 22
-      ansible_user: ansible
     astor:
       ansible_host: 192.168.1.7
       ansible_port: 999
@@ -25,4 +21,10 @@ proxnodes:
       ansible_host: 192.168.1.100
       ansible_port: 22
       ansible_user: root
-
+homelab:
+  hosts:
+    truenas:
+      ansible_host: 192.168.1.130
+      ansible_port: 998
+      ansible_user: admin
+      ansible_password: Trotyl3472

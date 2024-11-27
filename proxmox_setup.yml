@@ -22,7 +22,7 @@
 
   - name: add ansible to sudoers
     copy:
-      src: sudoer_ansible
+      src: ./files/sudoer_ansible
       dest: /etc/sudoers.d/ansible
       owner: root
       group: root
