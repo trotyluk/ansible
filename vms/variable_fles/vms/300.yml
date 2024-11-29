@@ -1,0 +1,12 @@
+- name: vmtest1
+  vmid: 300
+  node: prox
+  image_file: debian-11-generic-amd64.qcow2
+  cores: 2
+  memory: 3096
+  balloning: true
+  #vlan: 1
+  ipv4mode: dhcp
+  #ipv4_address: 192.168.1./24
+  #ipv4_gateway: 192.168.102.254
+  state: new

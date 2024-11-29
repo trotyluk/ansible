@@ -1,0 +1,37 @@
+# playbook to build three vms
+# connection to proxmox (proxmoxer)
+- hosts: prox
+  become: true
+  vars:
+    ubuntu2404image: https://cloud-images.ubuntu.com/jammy/20241004/jammy-server-cloudimg-amd64-disk-kvm.img
+
+  tasks:
+
+  - name: Update repository cache
+    apt:
+      update_cache: true
+      cache_valid_time: 3600
+
+  - name: Install proxmoxer
+    apt:
+      name:
+        - python3-proxmoxer
+      state: latest
+       
+  - name: Install wget package
+    apt:
+      name:
+        - wget
+      state: latest
+
+  - name: Create directory if necessary
+    ansible.builtin.file:
+      path: /root/ubuntu
+      state: directory
+
+  - name: Download ubuntu 24.04
+    ansible.builtin.get_url:
+      url: {{ ubuntu2404image }}
+      dest: /root/ubuntu
+      
+

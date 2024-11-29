@@ -1,0 +1,10 @@
+ansible_key_file: ./files/public-keys/ansible-key.pub
+project_path: './vms/'
+image_path: '/var/lib/vz/images/0/'
+domain_name: '.homelab.lan'
+timezone: 'Europe/London'
+locale: 'en_GB.UTF-8'
+group_name: proxnodes
+variable_files:
+  - images
+  - vms

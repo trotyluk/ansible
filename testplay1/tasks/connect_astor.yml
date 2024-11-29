@@ -1,0 +1,9 @@
+# playbook do poaczenia do astor
+# pobiera dane z vars/main.yml
+- hosts: astor
+  become: true
+  tasks:
+
+    - shell:
+      cmd: "ssh -l {{ astor_username }} -p {{ astor_port }} {{ astor_ip }}"
+      
