@@ -1,5 +1,4 @@
 ---
-
 ansible:
   hosts:
     astor:
@@ -11,6 +10,7 @@ ansible:
       ansible_host: 192.168.1.1
       ansible_port: 991
       ansible_user: ansible
+
 proxnodes:
   hosts:
     prox:
@@ -21,10 +21,29 @@ proxnodes:
       ansible_host: 192.168.1.100
       ansible_port: 22
       ansible_user: ansible
+
 homelab:
   hosts:
     truenas:
       ansible_host: 192.168.1.130
       ansible_port: 998
       ansible_user: admin
+      ansible_password: Trotyl3472
+
+testlab:
+  hosts:
+    ubuntu-1:
+      ansible_host: 192.168.1.141
+      ansible_port: 22
+      ansible_user: ubuntu
+      ansible_password: Trotyl3472
+    ubuntu-2:
+      ansible_host: 192.168.1.142
+      ansible_port: 22
+      ansible_user: ubuntu
+      ansible_password: Trotyl3472
+    ubuntu-3:
+      ansible_host: 192.168.1.143
+      ansible_port: 22
+      ansible_user: ubuntu
       ansible_password: Trotyl3472

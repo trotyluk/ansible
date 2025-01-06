@@ -1,0 +1,16 @@
+---
+  - name: Playing with Ansible and Git
+    hosts: localhost
+    connection: local
+    tasks:
+
+    - name: just execute a ls -lrt command
+      shell:
+        cmd: ls -lrt
+      register: output
+
+    - debug: var=output.stdout_lines
+
+    - name: multipass check
+      shell: multipass launch -c 3 -m 4G -d 10G -n test-1 --network bridged
+      
