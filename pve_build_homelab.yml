@@ -1,12 +1,12 @@
+---
 # playbook to build three vms
 # connection to proxmox (proxmoxer)
-- hosts: prox
+- hosts: proxnodes
   become: true
   vars:
     ubuntu2404image: https://cloud-images.ubuntu.com/jammy/20241004/jammy-server-cloudimg-amd64-disk-kvm.img
 
   tasks:
-
   - name: Update repository cache
     apt:
       update_cache: true
