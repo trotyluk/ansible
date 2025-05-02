@@ -1,19 +1,19 @@
----
-
+# settings to new proxmox
 - hosts: proxnodes
   tasks:
 
-  - name install sudo package
-    apt:
-      name: sudo
-      update_cache: yes
-      cache_valid_time: 3600
-      state: latest
+  - name: install sudo package
+    apt: 
+      name: sudo 
+      state: latest 
+#      update_cache: yes
+#      cache_valid_time: 3600
+#      state: latest
 
   - name: create Ansible user
     user:
       name: ansible
-      shell: '/bin/bash'
+      shell: /bin/bash
 
   - name: add Ansible ssh key
     authorized_key:
@@ -22,7 +22,7 @@
 
   - name: add ansible to sudoers
     copy:
-      src: sudoer_ansible
+      src: ./files/sudoer_ansible
       dest: /etc/sudoers.d/ansible
       owner: root
       group: root
