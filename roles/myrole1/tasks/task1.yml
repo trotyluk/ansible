@@ -1,0 +1,4 @@
+---
+- name: Example from an Ansible Playbook
+  ansible.builtin.ping:
+  
