@@ -1,0 +1,12 @@
+- name: task1.yml
+  hosts: proxmox
+  gather_facts: true
+  # vars_prompt: 
+  # - name: "ansible_password"
+  #   prompt: "Enter the remote password"
+  #   private: yes
+  vars: 
+    # ansible_user: anskible
+  tasks:
+  - import_role: 
+      name: myrole1
