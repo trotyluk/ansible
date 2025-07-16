@@ -1,0 +1,13 @@
+- name: proxmox_cloudinit.yml
+  hosts: proxmox
+  gather_facts: true
+  vars_prompt: 
+  # uncoment and set password if connection need password
+  # - name: "ansible_password"
+  #   prompt: "Enter the remote password"
+  #   private: yes
+  # vars: 
+  # ansible_user: ansible
+  tasks:
+  - import_role: 
+      name: playbooks/roles/ansibleRole-proxmox-templates

@@ -12,8 +12,8 @@ ansible:
     router:
       ansible_host: 10.1.1.1
       ansible_port: 991
-      #ansible_user: ansible
-      ansible_password: Trotyl3472
+      ansible_user: ansible
+      #ansible_password: Ala@ma@kota3472
 
 proxnodes:
   hosts:
@@ -22,7 +22,7 @@ proxnodes:
       ansible_port: 22
       #ansible_user: ansible
       ansible_user: root
-      ansible_password: Trotyl3472
+      #ansible_password: Trotyl3472
 
     proxmox:
       ansible_host: 10.1.1.100
@@ -30,7 +30,20 @@ proxnodes:
       # ustawić ansible user ans ssh key to automatic connection
       #ansible_user: ansible
       ansible_user: root
-      ansible password: Trotyl3472
+      #ansible password: Trotyl3472
+
+      # cloudnodes:
+      #   hosts:
+      #     cloudflared1:
+      #       ansible_host: 10.1.1.221
+      #       ansible_port: 22
+      #       ansible_user: root
+      #       ansible password: Trotyl3472
+      #     cloudflared2:
+      #       ansible_host: 10.1.1.222
+      #       ansible_port: 22
+      #       ansible_user: root
+      #       ansible password: Trotyl3472
 
 homelab:
   hosts:
@@ -40,4 +53,4 @@ homelab:
       ansible_user: ansible
       #ansible_password: Trotyl3472
 
-# end
+      # end
