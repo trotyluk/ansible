@@ -1,0 +1,25 @@
+---
+- name: Add NVIDIA support to Proxmox
+  hosts: proxmox
+  become: yes
+
+  tasks:
+  - name: Install necessary packages
+    apt:
+      name:
+      - nvidia-container-toolkit
+      - nvidia-dkms
+      state: present
+
+  - name: Configure the NVIDIA toolkit
+    template:
+      src: templates/nvidia-container-toolkit.conf.j2
+      dest: /etc/systemd/system/nvidia-container-toolkit.service.d/nvidia-container-toolkit.conf
+    notify:
+    - Restart nvidia-container-toolkit
+
+  handlers:
+  - name: Restart nvidia-container-toolkit
+    service:
+      name: nvidia-container-toolkit
+      state: restarted
