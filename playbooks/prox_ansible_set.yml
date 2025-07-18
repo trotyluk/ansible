@@ -1,13 +1,27 @@
-# install nano neovim
-- hosts: proxnodes
+#install nano neovim
+- hosts: proxmox
   become: true
   tasks:
 
   - name: update repository cache and upgrade
     apt:
       update_cache: true
+      
+  - name: install apps
+    apt:
       name:
-      - proxmoxer
-      - requests
+      - python3-proxmoxer
+      - python3-pip
+      - neovim
+      - python3-requests
       state: latest
+
+  - name: Ensure pip is installed
+    ansible.builtin.package:
+      name: python3-pip
+      state: present
+
+  - name: Check if requests is available in Python3
+    ansible.builtin.command:
+      cmd: "python3 -c 'import requests; print(\"requests version:\", requests.__version__)'"
 
