@@ -1,5 +1,5 @@
 #install nano neovim
-- hosts: proxmox
+- hosts: prox
   become: true
   tasks:
 
