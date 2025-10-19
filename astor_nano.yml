@@ -1,0 +1,10 @@
+---
+- name: Install packages with OPKG and use Nano as the editor
+  hosts: astor
+  #become: yes
+  tasks:
+    - name: Update package list
+      command: ls > opkgupdate.txt
+
+    - name: Install required packages
+      command: pwd > opkgnano.txt

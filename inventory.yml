@@ -1,5 +1,7 @@
 ---
 ansible:
+  # vars_files:
+  # - vault.yml
   vars:
     ansible_user: ansible
     ansible_ssh_private_key_file: ~/.ssh/ansible
@@ -8,7 +10,11 @@ ansible:
       ansible_host: 10.1.1.7
       ansible_port: 999
       ansible_user: boss1
+      ansible_password: Trotyl3472@
+      sudo_password: Trotyl3472@
       ansible_python_interpreter: /usr/local/bin/python3
+      ansible_sudo_pass: 'Trotyl3472@'
+
     router:
       ansible_host: 10.1.1.1
       ansible_port: 991
